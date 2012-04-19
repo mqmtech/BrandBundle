@@ -18,4 +18,4 @@ interface BrandFactoryInterface
     public function getBrandClass();
 }
 
-?>
+
