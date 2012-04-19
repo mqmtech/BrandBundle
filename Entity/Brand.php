@@ -77,10 +77,6 @@ class Brand implements BrandInterface
     
     function __clone()
     {
-        if ($this->id) {
-
-        }
-
         if ($this->image) {
             $this->image = null;
         }

@@ -8,12 +8,13 @@ use MQM\PaginationBundle\Pagination\PaginationInterface;
 class BrandRepository extends EntityRepository
 {
     /**
-     * @return array
+     * @param integer $maxCount
+     * @return null 
      */
     public function findRandomBrands($maxCount = self::MAX_RANDOM_RESULTS)
     {
         $em = $this->getEntityManager();
-        $q = $em->createQuery('SELECT b from MQMBrandBundle:Brand b');
+        $q = $em->createQuery('SELECT b FROM MQMBrandBundle:Brand b');
         $brands = $q->getResult();
         
         if ($brands == null) {
@@ -37,10 +38,14 @@ class BrandRepository extends EntityRepository
         return $randBrands;
     }
     
+    /**
+     * @param PaginationInterface $pagination
+     * @return type 
+     */
     public function findAll(PaginationInterface $pagination = null)
     {
         $em = $this->getEntityManager();
-        $query = $em->createQuery('SELECT b from MQMBrandBundle:Brand b');
+        $query = $em->createQuery('SELECT b FROM MQMBrandBundle:Brand b');
         if ($pagination) {
             $query = $pagination->paginateQuery($query);
         }
