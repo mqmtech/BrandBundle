@@ -2,9 +2,9 @@
 
 namespace MQM\BrandBundle\Test\Brand;
 
-use MQM\BrandBundle\Brand\BrandInterface;
+
 use MQM\BrandBundle\Model\BrandManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Tests\Functional\AppKernel;
+
 
 class BrandManagerTest extends \Symfony\Bundle\FrameworkBundle\Test\WebTestCase
 {   
